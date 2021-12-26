@@ -12,7 +12,7 @@ public class DELETE_Controller {
     UsuarioRepositorio usuarioRepositorio;
 
     @DeleteMapping("/delete/{id}")
-    public void deleteById(@PathVariable int id) throws Exception {
+    public void deleteUserById(@PathVariable int id) throws Exception {
         if(usuarioRepositorio.findById(id).isPresent()){
             usuarioRepositorio.deleteById(id);
         }

@@ -2,13 +2,13 @@ package com.example.jpademo.Usuario.Infrastructure.dto.Input;
 
 import com.example.jpademo.Usuario.Domain.Usuario;
 import lombok.Data;
+import org.springframework.stereotype.Component;
 
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.util.Date;
 
-@Entity
+@Component
 @Data
 public class UsuarioInputDTO {
     @Id
