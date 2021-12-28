@@ -1,11 +1,10 @@
-package com.example.jpademo;
+package com.example.jpademo.Usuario.Infrastructure.Controller;
 
+import com.example.jpademo.Usuario.Domain.UsuarioRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
-
-import javax.websocket.server.PathParam;
 
 @RestController
 public class DELETE_Controller {

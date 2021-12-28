@@ -1,6 +1,8 @@
-package com.example.jpademo;
+package com.example.jpademo.Usuario.Infrastructure.Controller;
 
 
+import com.example.jpademo.Usuario.Domain.Usuario;
+import com.example.jpademo.Usuario.Domain.UsuarioRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;

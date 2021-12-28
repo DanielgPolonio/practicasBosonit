@@ -1,4 +1,4 @@
-package com.example.jpademo;
+package com.example.jpademo.Usuario.Domain;
 
 import lombok.Data;
 

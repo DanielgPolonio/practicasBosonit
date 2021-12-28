@@ -1,12 +1,10 @@
-package com.example.jpademo;
+package com.example.jpademo.Usuario.Infrastructure.Controller;
 
+import com.example.jpademo.NotFoundException;
+import com.example.jpademo.Usuario.Domain.Usuario;
+import com.example.jpademo.Usuario.Domain.UsuarioRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.config.ConfigDataResourceNotFoundException;
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.bind.MethodArgumentNotValidException;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-
 
 import java.util.List;
 

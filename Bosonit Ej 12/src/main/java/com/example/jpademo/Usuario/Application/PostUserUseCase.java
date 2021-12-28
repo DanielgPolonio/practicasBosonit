@@ -1,17 +1,18 @@
-package com.example.jpademo;
+package com.example.jpademo.Usuario.Application;
 
+import com.example.jpademo.Usuario.Application.Port.PostUserPort;
+import com.example.jpademo.Usuario.Domain.Usuario;
+import com.example.jpademo.Usuario.Domain.UsuarioRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Service;
 
-@RestController
-public class POST_Controller {
+@Service
+
+public class PostUserUseCase implements PostUserPort {
     @Autowired
     UsuarioRepositorio usuarioRepositorio;
 
-    @PostMapping
-    public Usuario insert(@RequestBody Usuario usuario) throws Exception {
+    public Usuario AddUser(Usuario usuario) throws Exception{
         if (usuario.getUsuario()==null) {
             throw new Exception("El usuario no puede ser nulo");
         }
@@ -43,4 +44,6 @@ public class POST_Controller {
         usuarioRepositorio.save(usuario);
         return usuario;
     }
+
+
 }
