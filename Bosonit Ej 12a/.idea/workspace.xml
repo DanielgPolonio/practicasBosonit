@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff0c2949-76fe-4c8a-94e1-4340331c104e" name="Changes" comment="Ej 10 terminado.">
-      <change beforePath="$PROJECT_DIR$/../Bosonit Ej 12/src/main/java/com/example/jpademo/NotFoundException.java" beforeDir="false" />
-    </list>
+    <list default="true" id="ff0c2949-76fe-4c8a-94e1-4340331c104e" name="Changes" comment="Ej 10 terminado." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,7 +51,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Bosonit Ej 12" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">

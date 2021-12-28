@@ -1,5 +1,6 @@
 package com.example.jpademo.Usuario.Application;
 
+import com.example.jpademo.NotFoundException;
 import com.example.jpademo.Usuario.Application.Port.GetUserPort;
 import com.example.jpademo.Usuario.Domain.Usuario;
 import com.example.jpademo.Usuario.Domain.UsuarioRepositorio;
@@ -21,8 +22,12 @@ public class GetUserUseCase implements GetUserPort {
     }
 
     @Override
-    public Usuario getUserById(int id) throws Exception {
-        return usuarioRepositorio.findById(id).orElseThrow(() -> new Exception("La id "+id+" no se encuentra."));
+    public Usuario getUserById(int id) throws NotFoundException {
+        if(usuarioRepositorio.findById(id).isPresent()){
+            return usuarioRepositorio.findById(id).get();
+        }else {
+            throw new NotFoundException("La id "+id+" no se encuentra.");
+        }
     }
 
     @Override
