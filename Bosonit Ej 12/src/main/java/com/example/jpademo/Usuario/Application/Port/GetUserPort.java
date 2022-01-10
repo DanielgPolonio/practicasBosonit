@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface GetUserPort {
     public List<Usuario> getAllUsers();
-    public Usuario getUserById(int id)  throws NotFoundException;;
+    public Usuario getUserById(int id)  throws NotFoundException;
     public List<Usuario> getUserByName(String name);
 }

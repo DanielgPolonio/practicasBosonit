@@ -12,7 +12,6 @@ import java.util.List;
 public class GET_Controller {
     @Autowired
     UsuarioRepositorio usuarioRepositorio;
-
     @GetMapping
     public List<Usuario> getAllUsers(){
         return usuarioRepositorio.findAll();
