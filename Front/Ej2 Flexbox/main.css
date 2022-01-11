@@ -1,106 +1,55 @@
-#container1{
+#formulario{
     display: flex;  
     flex-flow: row wrap;
     font-weight: bold;
     text-align: center; 
+    justify-content: center;
+    align-content:center;
 }
-#container2{
+h1{
+    align-self: center;
+}
+.lineaForm{
+    background-color: #7fffd4;
+    padding-left: 100px;
+    padding-right: 100px;
     display: flex;  
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     font-weight: bold;
     text-align: center; 
     justify-content: center;
 }
-#container3{
+
+.labelForm{
+    flex-grow: 1;
+    margin: 6px;
+    font-weight: bold;
+    text-align: left;
+}
+.resetForm{
+    flex-grow: 1;
+    margin: 6px;
+    font-weight: bold;
+    text-align: left;
+}
+.campoForm{
+    flex-grow: 1;
+    margin: 6px;
+    font-weight: bold;
+    text-align: right;
+}
+.sendForm{
+    flex-grow: 1;
+    margin: 6px;
+    font-weight: bold;
+    text-align: right;
+}
+.lineaFormBoton{
+    background-color: #7fffd4;
+    padding-left: 100px;
+    padding-right: 100px;
     display: flex;  
     flex-flow: row wrap;
     font-weight: bold;
-    text-align: center; 
-}
-#container4{
-    display: flex;  
-    flex-flow: row nowrap;
-    font-weight: bold;
-    width:50%;
-}
-#container5{
-    display: flex;  
-    flex-flow: row-reverse nowrap;
-    font-weight: bold;
-    justify-content: flex-end;
-}
-.red{
-    background-color: red;
-}
-.blue{
-    background-color: blue;
-}
-.boxC1{
-    flex-grow: 1;
-    padding: 5px;
-    height: 100px;
-    margin: 2px;
-    line-height: 100px;
-    font-weight: bold;
-    font-size: 2em;
-    text-align: center;
-}
-.boxC2{
-    padding: 5px;
-    min-width: 0;
-    flex-grow: 1;
 
-    height: 50px;
-    margin: 2px;
-    line-height: 50px;
-    font-weight: bold;
-    text-align: center;
-}
-.boxC3a{
-    padding: 5px;
-    flex: 0 0 17%;
-    height: 50px;
-    margin: 2px;
-    line-height: 50px;
-    font-weight: bold;
-    text-align: center;
-}
-.boxC3b{
-    padding: 5px;
-    flex: 0 0 17%;
-    height: 50px;
-    margin: 2px;
-    line-height: 50px;
-    font-weight: bold;
-    text-align: center;
-}
-.boxC4a{
-    padding: 5px;
-    min-width: 0;
-    width:30%;
-    flex-grow: 2;
-    height: 50px;
-    margin: 2px;
-    line-height: 50px;
-    font-weight: bold;
-    text-align: center;
-}
-.boxC4b{
-    padding: 5px;
-    min-width: 0;
-    flex-grow: 1;
-    height: 50px;
-    margin: 2px;
-    line-height: 50px;
-    font-weight: bold;
-}
-.boxC5{
-    padding: 5px;
-    width:20%;
-    min-width: 0;
-    flex-grow: 1;
-    height: 50px;
-    margin: 2px;
-    line-height: 50px;
-    font-weight: bold;
 }

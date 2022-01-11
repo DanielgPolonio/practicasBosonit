@@ -3,47 +3,105 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Flexbox Ej 1</title>
+    <title>Flexbox Ej 2</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
 </head>
 <body>
-    <div id='container1'>
-        <aside class='red boxC1'>First</aside>
-        <aside class='red boxC1'>Second</aside>
-        <aside class='red boxC1'>Third</aside>
-        <aside class='red boxC1'>Fourth</aside>
-        <aside class='red boxC1'>Fifth</aside>
-        <aside class='red boxC1'>Sixth</aside>
-    </div>
-    <div id='container2'>
-        <aside class='red boxC2'>First</aside>
-        <aside class='red boxC2'>Second</aside>
-        <aside class='red boxC2'>Third</aside>
-        <aside class='red boxC2'>Fourth</aside>
-        <aside class='red boxC2'>Fifth</aside>
-        <aside class='red boxC2'>Sixth</aside>
-    </div>
-    <div id='container3'>
-        <aside class='blue boxC3a'>First</aside>
-        <aside class='blue boxC3a'>Second</aside>
-        <aside class='blue boxC3a'>Third</aside>
-        <aside class='blue boxC3a'>Fourth</aside>
-        <aside class='blue boxC3a'>Fifth</aside>
-        <aside class='blue boxC3b'>Sixth</aside>
-    </div>
-    <div id='container4'>
-        <aside class='red boxC4a'>First left</aside>
-        <aside class='red boxC4b'>Second</aside>
-        <aside class='red boxC4b'>Third</aside>
-    </div>
-    <div id='container5'>
-        <aside class='red boxC5'>Third</aside>
-        <aside class='red boxC5'>Second</aside>
-        <aside class='red boxC5'>First right</aside>  
-        <aside class='boxC5'></aside>
-        <aside class='boxC5'></aside>
-        <aside class='boxC5'></aside>  
+    <div id='formulario'>
+        <form>
+            <div class='lineaForm'>
+                <h1>Introducir los campos de las personas</h1>
+            </div>
+          <div class='lineaForm'>
+            <aside class='labelForm'>
+                <label for="Nombre">Nombre</label>  
+            </aside>
+            <aside class='campoForm'>
+                <input type="text" name="Nombre" id="Nombre"><br>
+            </aside>
+          </div>
+          <div class='lineaForm'>
+            <aside class='labelForm'>
+                <label for="Apellido">Apellido</label>  
+            </aside>
+            <aside class='campoForm'>
+                <input type="text" name="Apellido" id="Apellido"><br>
+            </aside>
+          </div>
+          <div class='lineaForm'>
+            <aside class='labelForm'>
+                <label for="Contraseña">Contraseña</label>  
+            </aside>
+            <aside class='campoForm'>
+                <input type="password" name="Contraseña" id="Contraseña"><br>
+            </aside>
+          </div>
+          <div class='lineaForm'>
+            <aside class='labelForm'>
+                <label for="eMailC">Email de la compañía</label>  
+            </aside>
+            <aside class='campoForm'>
+                <input type="email" name="eMailC" id="eMailC"><br>
+            </aside>
+          </div>
+          <div class='lineaForm'>
+            <aside class='labelForm'>
+                <label for="eMailP">Email personal</label>  
+            </aside>
+            <aside class='campoForm'>
+                <input type="email" name="eMailP" id="eMailP"><br>
+            </aside>
+          </div>
+          <div class='lineaForm'>
+            <aside class='labelForm'>
+                <label for="Ciudad">Ciudad</label>  
+            </aside>
+            <aside class='campoForm'>
+                <input type="text" name="Ciudad" id="Ciudad"><br>
+            </aside>
+          </div>
+          <div class='lineaForm'>
+            <aside class='labelForm'>
+                <label for="UrlImg">url de la imagen</label>  
+            </aside>
+            <aside class='campoForm'>
+                <input type="url" name="UrlImg" id="UrlImg"><br>
+            </aside>
+          </div>
+          <div class='lineaForm'>
+            <aside class='labelForm'>
+                <label for="FechaC">Fecha creación</label>  
+            </aside>
+            <aside class='campoForm'>
+                <input type="date" name="FechaC" id="FechaC"><br>
+            </aside>
+          </div>
+          <div class='lineaForm'>
+            <aside class='labelForm'>
+                <label for="CheckActivado">Activado</label>  
+            </aside>
+            <aside class='campoForm'>
+                <input type="checkbox" name="CheckActivado" id="CheckActivado"><br>
+            </aside>
+          </div>
+          <div class='lineaForm'>
+            <aside class='labelForm'>
+                <label for="FechaF">Fecha finalización</label>  
+            </aside>
+            <aside class='campoForm'>
+                <input type="date" name="FechaF" id="FechaF"><br>
+            </aside>
+          </div>
+          <div class='lineaFormBoton'>
+            <aside class='sendForm'>
+                <input type="submit" name="submitButton" id="submitButton" value='Editar'><br>
+            </aside>
+            <aside class='resetForm'>
+                <input type="reset" name="resetButton" id="resetButton" value='Limpiar'><br>
+            </aside>
+          </div>
+      </form>
     </div>
 </body>
 </html>
