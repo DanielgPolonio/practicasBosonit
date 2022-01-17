@@ -1,4 +1,4 @@
-.calculadora{
+#calculator{
     background-color: #8f8f8f;
     display: flex;
     flex-flow: column;
@@ -12,11 +12,19 @@
     flex-flow: column;
 }
 
-.contenedor{
+#container{
     margin:0.5em;
 }
 
-.fila{
+#screen{
+    background-color: greenyellow;
+    border: 0.1em solid #fff;
+    width: 18.8;
+    text-align: right;
+    font: 2em sans-serif;
+} 
+
+.row{
     display: flex;
     flex-flow: wrap;
     justify-content: space-between;
@@ -24,7 +32,7 @@
 
 
 
-.boton{
+.button{
     background-color: white;
     margin-top: 0.9em;
     border : 0.12em solid #000;
@@ -35,7 +43,7 @@
 
 
 
-.dobleBoton{
+.doubleButtons{
     background-color: white;
     margin-top: 0.9em;
     border :0.12em solid #000;
@@ -48,14 +56,6 @@ p{
     margin-top: 0.3em;
 }
 
-.rojo{
+.red{
     color:red;
 }
-
-.pantalla{
-    background-color: greenyellow;
-    border: 0.1em solid #fff;
-    width: 18.8;
-    text-align: right;
-    font: 2em sans-serif;
-} 
