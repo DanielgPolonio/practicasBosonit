@@ -1,85 +1,88 @@
-const NUM_DIGITOS = 9;
-const MAX_VALOR = 999999999;
-let numeroAnterior = 0;
-let operacion = '';
+let previousNumber = 0;
+let operation = '';
 window.onload = function () {
     let elements = document.getElementsByTagName('button');
     let numElements = elements.length;
     for (let i = 0; i < numElements; i++) {
         let element = elements[i];
-        element.onclick = clicBoton;
+        element.onclick = clicButton;
     }
 };
-function clicBoton(eventos) {
-    let data = eventos.target.childNodes[0].data;
-    if (eventos.target.childNodes[0].data == undefined) {
-        data = eventos.target.childNodes[0].childNodes[0].data;
+function clicButton(events) {
+    let data = events.target.childNodes[0].data;
+    if (events.target.childNodes[0].data == undefined) {
+        data = events.target.childNodes[0].childNodes[0].data;
     }
-    prepararOperacion(eventos, data);
+    setOperation(data);
 }
-function prepararOperacion(eventos, data) {
-    let numero = Number(data);
-    let pantalla = document.getElementById("screen");
-    if (!isNaN(numero)) {
-        if (Number(pantalla.innerHTML) == 0)
-            pantalla.innerHTML = numero.toString();
-        else if (pantalla.innerHTML.length < NUM_DIGITOS)
-            document.getElementById("screen").innerHTML += numero;
+function setOperation(data) {
+    let number = Number(data);
+    let screen = document.getElementById("screen");
+    if (!isNaN(number)) {
+        if (Number(screen.innerHTML) == 0)
+            screen.innerHTML = number.toString();
+        else if (screen.innerHTML.length < 9)
+            document.getElementById("screen").innerHTML += number;
     }
     else {
-        numero = Number(pantalla.innerHTML);
+        number = Number(screen.innerHTML);
         if (data != '=') {
             if (data != ',') {
-                operacion = data;
-                pantalla.innerHTML = '0';
-                numeroAnterior = numero;
+                operation = data;
+                screen.innerHTML = '0';
+                previousNumber = number;
             }
             else {
-                pantalla.innerHTML += '.';
+                screen.innerHTML += '.';
             }
         }
         else {
-            operar(pantalla, numero);
-            operacion = '';
-            numeroAnterior = 0;
+            operate(screen, number);
+            operation = '';
+            previousNumber = 0;
         }
     }
 }
-function operar(pantalla, numero) {
-    let auxCadena = pantalla.innerHTML;
-    switch (operacion) {
+function operate(screen, number) {
+    let screenData = screen.innerHTML;
+    console.log("En pantalla: " + screenData + " number: " + number + " previousNumber: " + previousNumber);
+    switch (operation) {
         case '+': { //Sumar
-            auxCadena = (numero + numeroAnterior).toString();
+            screenData = (number + previousNumber).toString();
+            console.log("sumar: " + screenData);
             break;
         }
         case '-': { //Restar
-            auxCadena = (numeroAnterior - numero).toString();
+            screenData = (previousNumber - number).toString();
+            console.log("restar: " + screenData);
             break;
         }
         case 'x': { //Multiplicar
-            auxCadena = (numeroAnterior * numero).toString();
+            screenData = (previousNumber * number).toString();
             break;
         }
         case '/': { //Dividir
-            if (numero != 0)
-                auxCadena = (numeroAnterior / numero).toString();
+            if (number != 0)
+                screenData = (previousNumber / number).toString();
             break;
         }
         case 'c': { //Borrar
-            auxCadena = '0';
-            numeroAnterior = 0;
+            screenData = '0';
+            previousNumber = 0;
             break;
         }
         case 'exp': { //Exponencial
-            auxCadena = Math.pow(numeroAnterior, numero).toString();
+            screenData = Math.pow(previousNumber, number).toString();
             break;
         }
         case ',': { //Decimal
-            auxCadena += '.';
+            screenData += '.';
             break;
         }
         default: {
             break;
         }
     }
+    console.log("Final:" + screenData);
+    screen.innerHTML = screenData;
 }
