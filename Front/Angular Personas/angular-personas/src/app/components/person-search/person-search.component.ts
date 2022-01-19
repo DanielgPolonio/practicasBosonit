@@ -16,10 +16,10 @@ import {
 
 import {
   Persona
-} from '../persona';
+} from '../../persona';
 import {
   PersonService
-} from '../person.service';
+} from '../../person.service';
 @Component({
   selector: 'app-person-search',
   templateUrl: './person-search.component.html',

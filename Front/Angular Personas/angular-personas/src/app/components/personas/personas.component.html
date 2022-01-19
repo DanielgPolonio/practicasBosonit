@@ -1,10 +1,11 @@
 <h2>Lista Personas</h2>
 <ul class="personas">
   <li *ngFor="let person of personas">
-    <a routerLink="/detail/{{person.id}}">
+    <a routerLink="/detailModal/{{person.id}}">
       <span class="badge">{{person.id}}</span> {{person.name}}
     </a>
-    <button class="delete" title="delete person" (click)="delete(person)">X</button>
+    <a routerLink="/update/{{person.id}}"><button class="">Editar</button></a>
+    <button class="" title="delete person" (click)="delete(person)">X</button>
   </li>
 </ul>
 <app-person-search></app-person-search>

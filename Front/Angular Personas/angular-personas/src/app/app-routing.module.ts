@@ -7,23 +7,27 @@ import {
 } from '@angular/router';
 import {
   PersonasComponent
-} from './personas/personas.component';
+} from './components/personas/personas.component';
 import {
   DashboardComponent
-} from './dashboard/dashboard.component';
+} from './components/dashboard/dashboard.component';
 import {
   PersonDetailComponent
-} from './person-detail/person-detail.component';
+} from './components/person-detail/person-detail.component';
 import {
   CrearPersonaComponent
-} from './crear-persona/crear-persona.component';
+} from './components/crear-persona/crear-persona.component';
+import { PersonModalComponent } from './components/person-modal/person-modal.component';
 
 
 const routes: Routes = [{
+  path: 'detailModal/:id',
+  component: PersonModalComponent
+},{
     path: 'crearPersona',
     component: CrearPersonaComponent
   }, {
-    path: 'detail/:id',
+    path: 'update/:id',
     component: PersonDetailComponent
   }, {
     path: '',

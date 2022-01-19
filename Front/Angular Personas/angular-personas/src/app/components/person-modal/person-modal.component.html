@@ -1,0 +1,11 @@
+<mat-dialog-content>  
+<div *ngIf="person">
+    <h2>Datos de {{person.name}}</h2>
+    <div><span><b>ID: </b> </span>{{person.id}}</div>
+    <div><span><b>Nombre: </b> </span>{{person.name}}</div>
+    <div><span><b>Ciudad: </b> </span>{{person.city}}</div>
+</div>
+</mat-dialog-content>  
+<mat-dialog-actions>  
+<button (click)="goBack()">Volver</button>
+</mat-dialog-actions>  

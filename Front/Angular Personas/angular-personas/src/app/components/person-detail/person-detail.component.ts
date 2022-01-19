@@ -5,7 +5,7 @@ import {
 } from '@angular/core';
 import {
   Persona
-} from '../persona';
+} from '../../persona';
 import {
   ActivatedRoute
 } from '@angular/router';
@@ -14,7 +14,7 @@ import {
 } from '@angular/common';
 import {
   PersonService
-} from '../person.service';
+} from '../../person.service';
 @Component({
   selector: 'app-person-detail',
   templateUrl: './person-detail.component.html',
