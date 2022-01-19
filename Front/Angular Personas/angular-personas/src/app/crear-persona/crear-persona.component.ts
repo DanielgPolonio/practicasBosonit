@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Persona } from '../persona';
 import { PersonService } from '../person.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-crear-persona',
@@ -10,7 +11,7 @@ import { PersonService } from '../person.service';
 export class CrearPersonaComponent implements OnInit {
   personas: Persona[] = [];
 
-  constructor(private personService: PersonService) { }
+  constructor(private personService: PersonService, private location: Location) { }
 
   ngOnInit(): void {
   }
@@ -21,6 +22,10 @@ export class CrearPersonaComponent implements OnInit {
     this.personService.addPerson({ name, city } as Persona)
       .subscribe(person => {
         this.personas.push(person);
-      });
+      })
+      this.goBack();
+  }
+  goBack(): void {
+    this.location.back();
   }
 }

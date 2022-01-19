@@ -12,6 +12,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 import { MessagesComponent } from './messages/messages.component';
 import { CrearPersonaComponent } from './crear-persona/crear-persona.component';
+import { PersonSearchComponent } from './person-search/person-search.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CrearPersonaComponent } from './crear-persona/crear-persona.component';
     PersonDetailComponent,
     DashboardComponent,
     MessagesComponent,
-    CrearPersonaComponent
+    CrearPersonaComponent,
+    PersonSearchComponent
   ],
   imports: [
     HttpClientModule,

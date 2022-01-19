@@ -62,6 +62,19 @@ deletePerson(id: number): Observable<Persona> {
     catchError(this.handleError<Persona>('deletePerson'))
   );
 }
+
+searchPersonas(term: string): Observable<Persona[]> {
+  if (!term.trim()) {
+    // if not search term, return empty hero array.
+    return of([]);
+  }
+  return this.http.get<Persona[]>(`${this.personasUrl}/?name=${term}`).pipe(
+    tap(x => x.length ?
+       this.log(`Resultados con el nombre "${term}"`) :
+       this.log(`no hay resultados con el nombre "${term}"`)),
+    catchError(this.handleError<Persona[]>('searchPersonas', []))
+  );
+}
 /**
  * Handle Http operation that failed.
  * Let the app continue.
