@@ -1,5 +1,6 @@
 import {
   Component,
+  Inject,
   Input,
   OnInit
 } from '@angular/core';
@@ -13,7 +14,7 @@ import {
   ActivatedRoute
 } from '@angular/router';
 import { Location } from '@angular/common';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 
 @Component({
@@ -27,9 +28,15 @@ export class PersonModalComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
     private personService: PersonService,
-    private location: Location, private dialog: MatDialog) {}
+    private location: Location, private dialog: MatDialog, @Inject(MAT_DIALOG_DATA) public data: Persona, public dialogRef: MatDialogRef<any>) {
+      // console.log("id: "+data.id);
+      // console.log("id: "+data.name);
+      // console.log("id: "+data.city);
+      
+    }
 
   ngOnInit(): void {
+    this.dialogRef.updateSize('20%', '33%');
     this.getPersona();
   }
 
@@ -37,8 +44,5 @@ export class PersonModalComponent implements OnInit {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.personService.getPersona(id)
       .subscribe(person => this.person = person);
-  }
-  goBack(): void {
-    this.location.back();
   }
 }

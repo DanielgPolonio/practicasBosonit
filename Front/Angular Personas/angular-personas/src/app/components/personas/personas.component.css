@@ -30,20 +30,21 @@ input {
 }
 
 .personas a {
-  color: #333;
+  color: #fafafa;
   text-decoration: none;
-  background-color: #EEE;
+  background-color: rgb(113, 150, 219);
   margin: .5em;
   padding: .3em 0;
   height: 1.6em;
   border-radius: 4px;
+  font-size: 18px;
   display: block;
   width: 100%;
 }
 
 .personas a:hover {
-  color: #2c3a41;
-  background-color: #e6e6e6;
+  color: #fafafa;
+  background-color: rgb(70, 132, 248);
 }
 
 .personas a:active {
@@ -92,4 +93,39 @@ button.delete {
 button.delete:hover {
   background-color: #525252;
   color: white;
+}
+.botonAccion{
+  background-color: #0095ff;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.15385;
+  margin-left: 8px;
+  outline: none;
+  padding: 8px .8em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+.botonAccion:hover,
+.botonAccion:focus {
+  background-color: #07c;
+}
+
+.botonAccion:focus {
+  box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+}
+
+.botonAccion:active {
+  background-color: #0064bd;
+  box-shadow: none;
 }

@@ -1,11 +1,11 @@
+<app-person-search></app-person-search>
 <h2>Lista Personas</h2>
 <ul class="personas">
   <li *ngFor="let person of personas">
-    <a routerLink="/detailModal/{{person.id}}">
+    <a (click)=openDialog(person)>
       <span class="badge">{{person.id}}</span> {{person.name}}
     </a>
-    <a routerLink="/update/{{person.id}}"><button class="">Editar</button></a>
-    <button class="" title="delete person" (click)="delete(person)">X</button>
+    <button class="botonAccion" routerLink="/update/{{person.id}}">Editar</button>
+    <button class="botonAccion" title="delete person" routerLink="/delete/{{person.id}}">X</button>
   </li>
 </ul>
-<app-person-search></app-person-search>
