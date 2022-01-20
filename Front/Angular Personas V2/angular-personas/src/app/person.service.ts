@@ -34,15 +34,15 @@ export class PersonService {
   getPersona(id: number): Observable<Persona> {
     const url = `${this.personasUrl}/${id}`;
     return this.http.get<Persona>(url).pipe(
-      tap(_ => this.log(`fetched hero id=${id}`)),
-      catchError(this.handleError<Persona>(`getHero id=${id}`))
+      tap(_ => this.log(`fetched person id=${id}`)),
+      catchError(this.handleError<Persona>(`getPerson id=${id}`))
     );
   }
 
   updatePerson(person: Persona): Observable<any> {
     return this.http.put(this.personasUrl, person, this.httpOptions).pipe(
-      tap(_ => this.log(`updated hero id=${person.id}`)),
-      catchError(this.handleError<any>('updateHero'))
+      tap(_ => this.log(`updated person id=${person.id}`)),
+      catchError(this.handleError<any>('updatePerson'))
     );
   }
 
@@ -65,7 +65,6 @@ deletePerson(id: number): Observable<Persona> {
 
 searchPersonas(term: string): Observable<Persona[]> {
   if (!term.trim()) {
-    // if not search term, return empty hero array.
     return of([]);
   }
   return this.http.get<Persona[]>(`${this.personasUrl}/?name=${term}`).pipe(
