@@ -1,0 +1,21 @@
+  button {
+    margin-top: 20px;
+    background-color: rgb(126, 247, 162);
+    padding: 1rem;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  button:hover {
+    background-color: rgb(121, 250, 104);
+  }
+  button:disabled {
+    background-color: #eee;
+    color: #ccc;
+    cursor: auto;
+  }
+  span{
+    font-weight: bold;
+  }
+  .containerModal{
+    background-color: #96caec9c;
+  }
