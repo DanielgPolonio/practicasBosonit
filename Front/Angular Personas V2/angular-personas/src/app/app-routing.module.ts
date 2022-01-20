@@ -16,9 +16,13 @@ import {
 } from './components/crear-persona/crear-persona.component';
 import { PersonModalComponent } from './components/person-modal/person-modal.component';
 import { PersonDeleteComponent } from './components/person-delete/person-delete.component';
-
+import { PersonVistaCardComponent } from './components/person-vista-card/person-vista-card.component';
 
 const routes: Routes = [{
+  path: 'dashboard',
+  redirectTo: '/',
+  pathMatch: 'full'
+},{
   path: 'detailModal/:id',
   component: PersonModalComponent
 },{
@@ -32,11 +36,14 @@ const routes: Routes = [{
     component: PersonDeleteComponent
   }, {
     path: '',
-    redirectTo: '/personas',
+    redirectTo: '/',
     pathMatch: 'full'
   },{
     path: 'personas',
     component: PersonasComponent
+  },{
+    path: 'personasCard',
+    component: PersonVistaCardComponent
   }
 ];
 

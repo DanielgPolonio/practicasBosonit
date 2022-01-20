@@ -1,0 +1,15 @@
+.example-card {
+    max-width: 350px;
+    margin-left:8px;
+    margin-bottom: 8px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://img.joomcdn.net/2dc723864bdacfb55b684bd11486a3adb991a97b_original.jpeg');
+    background-size: cover;
+  }
+#container{
+    display: flex;  
+    flex-flow: row wrap;
+
+}

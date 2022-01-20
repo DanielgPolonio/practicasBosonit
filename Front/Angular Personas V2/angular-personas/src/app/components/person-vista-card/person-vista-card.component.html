@@ -1,0 +1,21 @@
+<h1>Listado apaisado de personas</h1>
+<div id="container">
+  <mat-card class="example-card" *ngFor="let person of personas">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{person.name}}</mat-card-title>
+      <mat-card-subtitle>Persona Nº {{person.id}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="https://cdn.theatlantic.com/thumbor/0CtQS46fSteiAfR2NbCqk51hTTI=/0x104:2000x1229/976x549/media/img/mt/2017/09/ComputerLyfe/original.jpg" alt="Imagen persona">
+    <mat-card-content>
+      <p>
+        <b>Nombre:</b> {{person.name}} <br>
+      <b>Lugar de residencia:</b> {{person.city}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button routerLink="/update/{{person.id}}">Editar</button>
+      <button mat-button routerLink="/delete/{{person.id}}">Borrar</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
