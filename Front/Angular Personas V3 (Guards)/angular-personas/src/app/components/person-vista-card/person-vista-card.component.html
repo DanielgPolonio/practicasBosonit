@@ -5,6 +5,8 @@
       <div mat-card-avatar class="example-header-image"></div>
       <mat-card-title>{{person.name}}</mat-card-title>
       <mat-card-subtitle>Persona Nº {{person.id}}</mat-card-subtitle>
+      <mat-card-subtitle>Ver detalle <input type="checkbox" id="checkDetalle{{person.id}}"></mat-card-subtitle>
+      <mat-card-subtitle id="errorDetalle{{person.id}}" class="errorDetalle"></mat-card-subtitle>
     </mat-card-header>
     <img mat-card-image src="https://cdn.theatlantic.com/thumbor/0CtQS46fSteiAfR2NbCqk51hTTI=/0x104:2000x1229/976x549/media/img/mt/2017/09/ComputerLyfe/original.jpg" alt="Imagen persona">
     <mat-card-content>
@@ -16,6 +18,7 @@
     <mat-card-actions>
       <button mat-button routerLink="/update/{{person.id}}">Editar</button>
       <button mat-button routerLink="/delete/{{person.id}}">Borrar</button>
+      <button mat-button routerLink="/detailModal/{{person.id}},{{person.name}},{{person.city}}">Ver detalle</button>
     </mat-card-actions>
   </mat-card>
 </div>

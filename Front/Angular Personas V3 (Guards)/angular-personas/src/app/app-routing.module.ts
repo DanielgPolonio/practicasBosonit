@@ -17,6 +17,7 @@ import {
 import { PersonModalComponent } from './components/person-modal/person-modal.component';
 import { PersonDeleteComponent } from './components/person-delete/person-delete.component';
 import { PersonVistaCardComponent } from './components/person-vista-card/person-vista-card.component';
+import { CheckDetailsGuard } from './guards/check-details.guard';
 
 const routes: Routes = [{
   path: 'dashboard',
@@ -24,7 +25,9 @@ const routes: Routes = [{
   pathMatch: 'full'
 },{
   path: 'detailModal/:id',
-  component: PersonModalComponent
+  component: PersonModalComponent,
+  canActivate: [CheckDetailsGuard],
+  data: {}
 },{
     path: 'crearPersona',
     component: CrearPersonaComponent

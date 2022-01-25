@@ -29,9 +29,6 @@ export class PersonModalComponent implements OnInit {
   constructor(private route: ActivatedRoute,
     private personService: PersonService,
     private location: Location, private dialog: MatDialog, @Inject(MAT_DIALOG_DATA) public data: Persona, public dialogRef: MatDialogRef<any>) {
-      // console.log("id: "+data.id);
-      // console.log("id: "+data.name);
-      // console.log("id: "+data.city);
       
     }
 
