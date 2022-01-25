@@ -1,14 +1,15 @@
 <h1>Listado apaisado de personas</h1>
-<div id="container">
-  <mat-card class="example-card" *ngFor="let person of personas">
+<div cdkDropList id="container" (cdkDropListDropped)="drop($event)">
+  <mat-card class="example-card" *ngFor="let person of personas" cdkDrag>
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>{{person.name}}</mat-card-title>
-      <mat-card-subtitle>Persona Nº {{person.id}}</mat-card-subtitle>
+      <mat-card-title>{{person.id}}: {{person.name}}</mat-card-title>
+      <mat-card-subtitle>{{person.rol}}</mat-card-subtitle>
       <mat-card-subtitle>Ver detalle <input type="checkbox" id="checkDetalle{{person.id}}"></mat-card-subtitle>
       <mat-card-subtitle id="errorDetalle{{person.id}}" class="errorDetalle"></mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image src="https://cdn.theatlantic.com/thumbor/0CtQS46fSteiAfR2NbCqk51hTTI=/0x104:2000x1229/976x549/media/img/mt/2017/09/ComputerLyfe/original.jpg" alt="Imagen persona">
+    <img *ngIf="person.rol.toString()=='Estudiante'" mat-card-image src="https://content.presspage.com/uploads/1093/1920_10-9kevinmendozastudentprofile-lt-006-970810.jpg" alt="Imagen estudiante">
+    <img *ngIf="person.rol.toString()=='Profesor'" mat-card-image src="https://content.sitemasonry.gmu.edu/sites/g/files/yyqcgq336/files/content-image/Thomas%20LaToza%20edited%20main%20photo.png" alt="Imagen profesor">
     <mat-card-content>
       <p>
         <b>Nombre:</b> {{person.name}} <br>

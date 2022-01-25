@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Persona } from '../../persona';
 import { PersonService } from '../../person.service';
 import { MatDialog } from '@angular/material/dialog';
-import { PersonModalComponent } from '../person-modal/person-modal.component';
+import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-person-vista-card',
@@ -21,4 +21,7 @@ export class PersonVistaCardComponent implements OnInit {
     this.personService.getPersonas().subscribe(personas => this.personas = personas);
   }
 
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.personas, event.previousIndex, event.currentIndex);
+  }
 }

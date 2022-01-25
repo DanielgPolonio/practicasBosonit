@@ -25,6 +25,8 @@ import { PersonDeleteComponent } from './components/person-delete/person-delete.
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { MatIconModule } from '@angular/material/icon';
 import { PersonVistaCardComponent } from './components/person-vista-card/person-vista-card.component'
+import { DragDropModule } from '@angular/cdk/drag-drop';
+
 
 @NgModule({
   declarations: [
@@ -47,7 +49,7 @@ import { PersonVistaCardComponent } from './components/person-vista-card/person-
     BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
-    MatDialogModule, MatInputModule, MatButtonModule, MatCardModule, MatFormFieldModule, MatNativeDateModule, MatMenuModule, MatIconModule
+    MatDialogModule, MatInputModule, MatButtonModule, MatCardModule, MatFormFieldModule, MatNativeDateModule, MatMenuModule, MatIconModule, DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]

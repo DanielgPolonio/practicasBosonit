@@ -7,16 +7,16 @@ import { Persona } from './persona';
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const personas = [
-      { id: 1, name: 'Daniel', city: 'Jaen' },
-      { id: 2, name: 'Luis', city: 'Madrid' },
-      { id: 3, name: 'Paloma', city: 'Madrid' },
-      { id: 4, name: 'Daniel del Río', city: 'Madrid' },
-      { id: 5, name: 'Rafa', city: 'Jaen' },
-      { id: 6, name: 'Sergio', city: 'Jaen' },
-      { id: 7, name: 'Manuel', city: 'Jaen' },
-      { id: 8, name: 'Francisco', city: 'Jaen' },
-      { id: 9, name: 'Blanca', city: 'Los Villares' },
-      { id: 10, name: 'Aurora', city: 'Córdoba' },
+      { id: 1, name: 'Daniel', city: 'Jaen', rol: 'Estudiante' },
+      { id: 2, name: 'Luis', city: 'Madrid' , rol: 'Profesor' },
+      { id: 3, name: 'Paloma', city: 'Madrid', rol: 'Estudiante' },
+      { id: 4, name: 'Daniel del Río', city: 'Madrid', rol: 'Estudiante' },
+      { id: 5, name: 'Rafa', city: 'Jaen', rol: 'Profesor' },
+      { id: 6, name: 'Sergio', city: 'Jaen', rol: 'Estudiante' },
+      { id: 7, name: 'Manuel', city: 'Jaen', rol: 'Profesor' },
+      { id: 8, name: 'Francisco', city: 'Jaen',rol: 'Profesor' },
+      { id: 9, name: 'Blanca', city: 'Los Villares', rol: 'Estudiante'},
+      { id: 10, name: 'Aurora', city: 'Córdoba', rol: 'Estudiante' },
     ];
     return {personas};
   }
