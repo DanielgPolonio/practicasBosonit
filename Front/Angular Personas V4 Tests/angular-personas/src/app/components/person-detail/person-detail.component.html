@@ -1,0 +1,10 @@
+<div *ngIf="person">
+  <div>
+    <label for="person-name">Nombre: </label>
+    <input id="person-name" [(ngModel)]="person.name" placeholder="name"> <br> <br>
+    <label for="person-name">Ciudad: </label>
+    <input id="person-city" [(ngModel)]="person.city" placeholder="city">
+  </div>
+  <button (click)="goBack()">Volver</button>
+  <button (click)="save()">Guardar</button>
+</div>

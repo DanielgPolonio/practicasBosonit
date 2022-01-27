@@ -26,7 +26,8 @@ const routes: Routes = [{
 },{
   path: 'detailModal/:id',
   component: PersonModalComponent,
-  canActivate: [CheckDetailsGuard]
+  canActivate: [CheckDetailsGuard],
+  data: {}
 },{
     path: 'crearPersona',
     component: CrearPersonaComponent

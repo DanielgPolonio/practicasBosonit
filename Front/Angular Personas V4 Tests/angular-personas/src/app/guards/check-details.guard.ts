@@ -18,8 +18,8 @@ export class CheckDetailsGuard implements CanActivate {
     var personId = route.paramMap.get('id'); //Array de la persona
     var index = personId?.indexOf(",");
     var id= personId?.substring(0,index); //ID de la persona
-    var name=personId?.substring(personId?.indexOf(",")+1,personId?.indexOf(",",personId?.indexOf(",")+1));//Nombre de la persona
-    var city=personId?.substring(personId?.indexOf(",",3)+1,personId?.length);//Ciudad de la persona
+    var name=personId?.substring(personId?.indexOf(",")+1,personId?.indexOf(",",personId?.indexOf(",")+1));//nombre de la persona
+    var city=personId?.substring(personId?.indexOf(",",3)+1,personId?.length);//nombre de la persona
     var check =<HTMLInputElement> document.getElementById('checkDetalle'+id); //ID personalizada para cada persona.
     var verDetalle =check.checked;
     if (verDetalle){
