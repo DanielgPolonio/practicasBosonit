@@ -39,7 +39,7 @@ const routes: Routes = [{
   }, {
     path: '',
     redirectTo: '/',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },{
     path: 'personas',
     component: PersonasComponent

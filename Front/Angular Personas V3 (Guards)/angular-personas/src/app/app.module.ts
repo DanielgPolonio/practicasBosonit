@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms'; 
 
@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PersonasComponent } from './components/personas/personas.component';
 import { PersonDetailComponent } from './components/person-detail/person-detail.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 import { MessagesComponent } from './components/messages/messages.component';
@@ -26,6 +26,9 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { MatIconModule } from '@angular/material/icon';
 import { PersonVistaCardComponent } from './components/person-vista-card/person-vista-card.component'
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { CustomErrorHandlerService } from './custom-error-handler.service';
+import { CustomHttpInterceptorService } from './custom-http-interceptor-service.service';
+import { ModalErrorComponent } from './components/modal-error/modal-error.component';
 
 
 @NgModule({
@@ -39,7 +42,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     PersonModalComponent,
     PersonDeleteComponent,
     DashboardComponent,
-    PersonVistaCardComponent
+    PersonVistaCardComponent,
+    ModalErrorComponent,
   ],
   imports: [
     HttpClientModule,
@@ -51,7 +55,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     FormsModule,
     MatDialogModule, MatInputModule, MatButtonModule, MatCardModule, MatFormFieldModule, MatNativeDateModule, MatMenuModule, MatIconModule, DragDropModule
   ],
-  providers: [],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: CustomHttpInterceptorService, multi: true  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
