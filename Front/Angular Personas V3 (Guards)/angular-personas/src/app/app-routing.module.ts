@@ -18,6 +18,8 @@ import { PersonModalComponent } from './components/person-modal/person-modal.com
 import { PersonDeleteComponent } from './components/person-delete/person-delete.component';
 import { PersonVistaCardComponent } from './components/person-vista-card/person-vista-card.component';
 import { CheckDetailsGuard } from './guards/check-details.guard';
+import { PersonResolver } from './resolvers/person.resolver';
+// import { PeopleResolver } from './resolvers/people.resolver';
 
 const routes: Routes = [{
   path: 'dashboard',
@@ -32,17 +34,26 @@ const routes: Routes = [{
     component: CrearPersonaComponent
   }, {
     path: 'update/:id',
-    component: PersonDetailComponent
+    component: PersonDetailComponent,
+    resolve: {
+      person: PersonResolver
+    }
   },{
     path: 'delete/:id',
-    component: PersonDeleteComponent
+    component: PersonDeleteComponent,
+    resolve: {
+      person: PersonResolver
+    }
   }, {
     path: '',
     redirectTo: '/',
     pathMatch: 'full',
   },{
     path: 'personas',
-    component: PersonasComponent
+    component: PersonasComponent,
+    // resolve: {
+    //   person: PeopleResolver
+    // }
   },{
     path: 'personasCard',
     component: PersonVistaCardComponent

@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { PersonasComponent } from './components/personas/personas.component';
 import { PersonDetailComponent } from './components/person-detail/person-detail.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { HttpClientInMemoryWebApiModule, InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 import { MessagesComponent } from './components/messages/messages.component';
 import { CrearPersonaComponent } from './components/crear-persona/crear-persona.component';
@@ -29,7 +29,6 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { CustomErrorHandlerService } from './custom-error-handler.service';
 import { CustomHttpInterceptorService } from './custom-http-interceptor-service.service';
 import { ModalErrorComponent } from './components/modal-error/modal-error.component';
-
 
 @NgModule({
   declarations: [
@@ -53,9 +52,9 @@ import { ModalErrorComponent } from './components/modal-error/modal-error.compon
     BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
-    MatDialogModule, MatInputModule, MatButtonModule, MatCardModule, MatFormFieldModule, MatNativeDateModule, MatMenuModule, MatIconModule, DragDropModule
+    MatDialogModule, MatInputModule, MatButtonModule, MatCardModule, MatFormFieldModule, MatNativeDateModule, MatMenuModule, MatIconModule, DragDropModule,
   ],
-  providers: [{provide: HTTP_INTERCEPTORS, useClass: CustomHttpInterceptorService, multi: true  }],
+  providers: [{provide: ErrorHandler, useClass: CustomErrorHandlerService},{ provide: HTTP_INTERCEPTORS, useClass: CustomHttpInterceptorService, multi: true  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

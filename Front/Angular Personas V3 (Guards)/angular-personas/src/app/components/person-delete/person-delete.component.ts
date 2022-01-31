@@ -18,14 +18,18 @@ import {
 export class PersonDeleteComponent implements OnInit {
   @Input() person ? : Persona;
   personas: Persona [] = [];
-  constructor(private personService: PersonService, private route: ActivatedRoute, private location: Location) { }
+  personLoaded
+  constructor(private personService: PersonService, private route: ActivatedRoute, private location: Location) {
+    this.personLoaded = this.route.snapshot.data['person'];
+
+   }
 
   ngOnInit(): void {
     this.delete();
   }
 
   getPersona():void{
-    const id = Number(this.route.snapshot.paramMap.get('id'));
+    const id = this.personLoaded.id;
     this.personService.getPersona(id)
       .subscribe(person => this.person = person);
   }

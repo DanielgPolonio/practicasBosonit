@@ -21,17 +21,21 @@ import {
   styleUrls: ['./person-detail.component.css']
 })
 export class PersonDetailComponent implements OnInit {
+personLoaded
   @Input() person ? : Persona;
   constructor(private route: ActivatedRoute,
     private personService: PersonService,
-    private location: Location) {}
+    private location: Location) {
+      this.personLoaded = this.route.snapshot.data['person'];
+      console.log(this.personLoaded);
+    }
 
   ngOnInit(): void {
     this.getPersona();
   }
 
   getPersona():void{
-    const id = Number(this.route.snapshot.paramMap.get('id'));
+    const id = this.personLoaded.id;
     this.personService.getPersona(id)
       .subscribe(person => this.person = person);
   }

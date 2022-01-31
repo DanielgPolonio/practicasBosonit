@@ -3,6 +3,7 @@ import { Persona } from '../../persona';
 import { PersonService } from '../../person.service';
 import {MatDialog} from '@angular/material/dialog';
 import { PersonModalComponent } from '../person-modal/person-modal.component';
+import { ActivatedRoute } from '@angular/router';
 
 
 
@@ -13,13 +14,12 @@ import { PersonModalComponent } from '../person-modal/person-modal.component';
 })
 export class PersonasComponent implements OnInit {
   personas: Persona [] = [];
-  constructor(private personService: PersonService, private dialog: MatDialog) { }
+  constructor(private personService: PersonService, private dialog: MatDialog,) { }
 
   openDialog(person: Persona) {
     const dialogRef = this.dialog.open(PersonModalComponent,{
       data: {id: person.id, name: person.name, city: person.city},
       width:'300px'});
-
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
@@ -29,13 +29,12 @@ export class PersonasComponent implements OnInit {
     this.getPersonas();
   }
 
-getPersonas(): void {
-  this.personService.getPersonas().subscribe(personas => this.personas = personas);
-}
+  getPersonas(): void {
+    this.personService.getPersonas().subscribe(personas => this.personas = personas);
+  }
 
-delete(person: Persona): void {
-  this.personas = this.personas.filter(h => h !== person);
-  this.personService.deletePerson(person.id).subscribe();
-}
-
+  delete(person: Persona): void {
+    this.personas = this.personas.filter(h => h !== person);
+    this.personService.deletePerson(person.id).subscribe();
+  }
 }
