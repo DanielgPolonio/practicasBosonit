@@ -8,7 +8,7 @@ import { PersonasComponent } from './components/personas/personas.component';
 import { PersonDetailComponent } from './components/person-detail/person-detail.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule, InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './in-memory-data.service';
+// import { InMemoryDataService } from './in-memory-data.service';
 import { MessagesComponent } from './components/messages/messages.component';
 import { CrearPersonaComponent } from './components/crear-persona/crear-persona.component';
 import { PersonSearchComponent } from './components/person-search/person-search.component';
@@ -46,8 +46,8 @@ import { ModalErrorComponent } from './components/modal-error/modal-error.compon
   ],
   imports: [
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(
-    InMemoryDataService, { dataEncapsulation: false }),
+    // HttpClientInMemoryWebApiModule.forRoot(
+    // InMemoryDataService, { dataEncapsulation: false }),
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,

@@ -15,6 +15,7 @@ import {
 import {
   PersonService
 } from '../../person.service';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-person-detail',
   templateUrl: './person-detail.component.html',
@@ -45,7 +46,16 @@ personLoaded
   save(): void {
     if (this.person) {
       this.personService.updatePerson(this.person)
-        .subscribe(() => this.goBack());
+        .subscribe()
+        Swal.fire({
+          title: '<strong>Usuario '+this.person.name+' editado correctamente.</strong>',
+          icon: 'success',
+          showCloseButton: true,
+          focusConfirm: false,
+          confirmButtonText:
+          '<i class="fa fa-thumbs-up"></i> Volver',
+        }).then(function(){window.location.href="localhost:4200/personas"});
     }
+    this.goBack();
   }
 }

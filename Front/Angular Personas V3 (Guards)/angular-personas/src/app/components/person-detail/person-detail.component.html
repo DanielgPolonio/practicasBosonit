@@ -2,8 +2,10 @@
   <div>
     <label for="person-name">Nombre: </label>
     <input id="person-name" [(ngModel)]="person.name" placeholder="name"> <br> <br>
-    <label for="person-name">Ciudad: </label>
-    <input id="person-city" [(ngModel)]="person.city" placeholder="city">
+    <label for="person-city">Ciudad: </label>
+    <input id="person-city" [(ngModel)]="person.city" placeholder="city"> <br> <br>
+    <label for="person-rol">Rol: </label>
+    <input id="person-rol" [(ngModel)]="person.rol" placeholder="rol">
   </div>
   <button (click)="goBack()">Volver</button>
   <button (click)="save()">Guardar</button>
