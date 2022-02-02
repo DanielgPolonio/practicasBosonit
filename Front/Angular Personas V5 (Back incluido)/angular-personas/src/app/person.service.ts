@@ -2,9 +2,6 @@ import { Injectable } from '@angular/core';
 import { Persona } from './persona';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
-
-
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +11,6 @@ export class PersonService {
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
-  private urlEnv = environment.baseUrl;
-  // private personasUrl = 'api/personas'; 
   private personasUrl = 'http://localhost:8080/personas'; 
   private personaUrl = 'http://localhost:8080/persona';
   constructor(private http: HttpClient) { }

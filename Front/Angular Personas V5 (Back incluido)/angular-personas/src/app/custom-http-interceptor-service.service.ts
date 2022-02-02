@@ -10,9 +10,6 @@ import { Location } from "@angular/common";
 export class CustomHttpInterceptorService implements HttpInterceptor {
   constructor(private router: Router, private location: Location) {}
 
-
-  
-
   intercept(req: HttpRequest < any > , next: HttpHandler): Observable < HttpEvent < any >> {
     return next.handle(req).pipe(
       catchError(this.manejarError)
@@ -30,8 +27,6 @@ export class CustomHttpInterceptorService implements HttpInterceptor {
         window.location.href = "localhost:4200"
       });
     }
-
-
 
     console.warn(error)
     return throwError(error)

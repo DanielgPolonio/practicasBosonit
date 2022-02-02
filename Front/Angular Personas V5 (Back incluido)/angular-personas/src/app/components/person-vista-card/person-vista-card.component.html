@@ -8,7 +8,7 @@
       <mat-card-subtitle>Ver detalle <input type="checkbox" id="checkDetalle{{person.id}}"></mat-card-subtitle>
       <mat-card-subtitle id="errorDetalle{{person.id}}" class="errorDetalle"></mat-card-subtitle>
     </mat-card-header>
-    <img *ngIf="person.rol.toString()=='Estudiante'" mat-card-image src="https://content.presspage.com/uploads/1093/1920_10-9kevinmendozastudentprofile-lt-006-970810.jpg" alt="Imagen estudiante">
+    <img *ngIf="person.rol.toString()!='Profesor'" mat-card-image src="https://content.presspage.com/uploads/1093/1920_10-9kevinmendozastudentprofile-lt-006-970810.jpg" alt="Imagen estudiante">
     <img *ngIf="person.rol.toString()=='Profesor'" mat-card-image src="https://content.sitemasonry.gmu.edu/sites/g/files/yyqcgq336/files/content-image/Thomas%20LaToza%20edited%20main%20photo.png" alt="Imagen profesor">
     <mat-card-content> 
       <p>
