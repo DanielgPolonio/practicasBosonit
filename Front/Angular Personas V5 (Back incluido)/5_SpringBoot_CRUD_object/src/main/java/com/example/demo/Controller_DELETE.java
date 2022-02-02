@@ -18,6 +18,5 @@ public class Controller_DELETE {
         if(IdMatch >= 0){
             managePersonas.getPersonaList().remove(IdMatch);
         }
-        //return managePersonas.getPersonaList().get(IdMatch);
     }
 }
