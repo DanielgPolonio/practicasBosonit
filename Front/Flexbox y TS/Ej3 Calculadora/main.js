@@ -1,23 +1,23 @@
-let previousNumber = 0;
-let operation = '';
+var previousNumber = 0;
+var operation = '';
 window.onload = function () {
-    let elements = document.getElementsByTagName('button');
-    let numElements = elements.length;
-    for (let i = 0; i < numElements; i++) {
-        let element = elements[i];
+    var elements = document.getElementsByTagName('button');
+    var numElements = elements.length;
+    for (var i = 0; i < numElements; i++) {
+        var element = elements[i];
         element.onclick = clicButton;
     }
 };
 function clicButton(events) {
-    let data = events.target.childNodes[0].data;
+    var data = events.target.childNodes[0].data;
     if (events.target.childNodes[0].data == undefined) {
         data = events.target.childNodes[0].childNodes[0].data;
     }
     setOperation(data);
 }
 function setOperation(data) {
-    let number = Number(data);
-    let screen = document.getElementById("screen");
+    var number = Number(data);
+    var screen = document.getElementById("screen");
     if (!isNaN(number)) {
         if (Number(screen.innerHTML) == 0)
             screen.innerHTML = number.toString();
@@ -44,7 +44,7 @@ function setOperation(data) {
     }
 }
 function operate(screen, number) {
-    let screenData = screen.innerHTML;
+    var screenData = screen.innerHTML;
     console.log("En pantalla: " + screenData + " number: " + number + " previousNumber: " + previousNumber);
     switch (operation) {
         case '+': { //Sumar
