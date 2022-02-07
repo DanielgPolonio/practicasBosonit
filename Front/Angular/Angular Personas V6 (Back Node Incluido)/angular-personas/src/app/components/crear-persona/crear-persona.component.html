@@ -1,0 +1,12 @@
+<div>
+  <br>
+    <label for="new-person-name">Nombre: </label>
+    <input id="new-person-name" #personName /> <br><br>
+    <label for="new-person-city">Ciudad: </label>
+    <input id="new-person-city" #personCity /><br><br>
+    <label for="new-person-rol">Rol: </label>
+    <input id="new-person-rol" #personRol /><br>
+    <button class="add-button" (click)="add(personName.value, personCity.value, personRol.value); personName.value=''">
+      Crear persona
+    </button>
+  </div>
