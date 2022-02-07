@@ -26,7 +26,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { MatIconModule } from '@angular/material/icon';
 import { PersonVistaCardComponent } from './components/person-vista-card/person-vista-card.component'
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import { CustomErrorHandlerService } from './custom-error-handler.service';
+// import { CustomErrorHandlerService } from './custom-error-handler.service';
 import { CustomHttpInterceptorService } from './custom-http-interceptor-service.service';
 import { ModalErrorComponent } from './components/modal-error/modal-error.component';
 
