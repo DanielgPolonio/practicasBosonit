@@ -2,7 +2,6 @@
 var express = require("express")
 var app = express()
 var db = require("./database.js")
-var md5 = require("md5")
 
 var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -56,23 +55,17 @@ app.get("/api/persona/:id", (req, res, next) => {
 //CREATE PERSONA (Crear persona).
 app.post("/api/persona/", (req, res, next) => {
     var errors=[]
-    if (!req.body.password){
-        errors.push("No se ha especificado una contraseña");
-    }
-    if (!req.body.email){
-        errors.push("No se ha especificado un email");
-    }
     if (errors.length){
         res.status(400).json({"error":errors.join(",")});
         return;
     }
     var data = {
         name: req.body.name,
-        email: req.body.email,
-        password : md5(req.body.password)
+        city: req.body.city,
+        rol : req.body.rol
     }
-    var sql ='INSERT INTO persona (name, email, password) VALUES (?,?,?)'
-    var params =[data.name, data.email, data.password]
+    var sql ='INSERT INTO persona (name, city, rol) VALUES (?,?,?)'
+    var params =[data.name, data.city, data.rol]
     db.run(sql, params, function (err, result) {
         if (err){
             res.status(400).json({"error": err.message})
@@ -90,16 +83,16 @@ app.post("/api/persona/", (req, res, next) => {
 app.patch("/api/persona/:id", (req, res, next) => {
     var data = {
         name: req.body.name,
-        email: req.body.email,
-        password : req.body.password ? md5(req.body.password) : null
+        city: req.body.city,
+        rol : req.body.rol
     }
     db.run(
         `UPDATE persona set 
            name = COALESCE(?,name), 
-           email = COALESCE(?,email), 
-           password = COALESCE(?,password) 
+           city = COALESCE(?,city), 
+           rol = COALESCE(?,rol) 
            WHERE id = ?`,
-        [data.name, data.email, data.password, req.params.id],
+        [data.name, data.city, data.rol, req.params.id],
         function (err, result) {
             if (err){
                 res.status(400).json({"error": res.message})

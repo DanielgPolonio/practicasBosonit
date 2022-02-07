@@ -13,18 +13,17 @@ let db = new sqlite3.Database(DBSOURCE, (err) => {
         db.run(`CREATE TABLE persona (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             name text, 
-            email text UNIQUE, 
-            password text, 
-            CONSTRAINT email_unique UNIQUE (email)
+            city text, 
+            rol text
             )`,
         (err) => {
             if (err) {
                 // La tabla ya existe.
             }else{
                 // Tabla creada correctamente, insertamos 2 usuarios.
-                var insert = 'INSERT INTO persona (name, email, password) VALUES (?,?,?)'
-                db.run(insert, ["Jose","jose@test.com",md5("pass123456")])
-                db.run(insert, ["Francisco","francisco@test.com",md5("pass123456")])
+                var insert = 'INSERT INTO persona (name, city, rol) VALUES (?,?,?)'
+                db.run(insert, ["Luis","Jaén","Estudiante"])
+                db.run(insert, ["Daniel","Montilla","Profesor"])
             }
         });  
     }
