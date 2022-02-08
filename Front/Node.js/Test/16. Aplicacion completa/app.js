@@ -10,7 +10,16 @@ let interface= readline.createInterface(process.stdin, process.stdout);
 const tools = `Comandos: :q = Salir, :sa = Guardar como, :s = Guardar.
 -----------------------------------------------------`;
 
-const pantalla = `
+const pantalla = `      
+                ____                        _ _   
+                |  _ \\                      (_) |  
+                | |_| | ___  ___  ___  _ __  _| |_ 
+                |  _ < / _ \\/ __|/ _ \\| '_ \\| | __|
+                | |_| | (_) \\__ \\ (_) | | | | | |_ 
+                |____/ \\___/|___/\\___/|_| |_|_|\\__|
+                                    
+                                    
+
                         ================
                         Editor de texto.\n
                         ================
