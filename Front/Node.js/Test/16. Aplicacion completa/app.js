@@ -6,8 +6,8 @@ const Directory = require('./directory');
 const dir = new Directory();
 
 let interface= readline.createInterface(process.stdin, process.stdout);
-
-const tools = `Comandos: :q = Salir, :sa = Guardar como, :s = Guardar.
+//Comandos utilizados para administrar el fichero.
+const tools = `Comandos: :q = Salir, :sa = Guardar como, :s = Guardar. 
 -----------------------------------------------------`;
 
 const pantalla = `      
@@ -36,10 +36,10 @@ function mainScreen() {
     interface.question(pantalla, res=>{
         switch (res.trim()) {
             case '1':
-                createFile();
+                createFile(); //Se crea un fichero vacío para que el usuario escriba.
             break;
             case '2':
-                openFileInterface();
+                openFileInterface(); //Mostramos la carpeta docs y su contenido.
             break;
             case '3':
                 interface.close(); //Cerramos la aplicación.
@@ -126,12 +126,13 @@ function mainScreen() {
     //Función para crear la interfaz de la opción 2.
     function openFileInterface(){
         let file = new Document(dir.getPath());
-        dir.getFilesInDir();
+        dir.getFilesInDir(); //Mostramos el contenido del directorio.
 
         interface.question(Messages.requestFileName, name=>{
             if(file.exists(name)){
-                openFile(file, name);
+                openFile(file, name); //Si el usuario escribe un nombre de fichero correcto, se abrirá.
             }else{
+                //Se muestra un mensaje de error debido a un nombre incorrecto y a los 2 segundos se devuelve al usuario a la pantalla principal
                 console.log(Messages.fileNotFound);
                 setTimeout(()=>{
                     interface.removeAllListeners('line');
