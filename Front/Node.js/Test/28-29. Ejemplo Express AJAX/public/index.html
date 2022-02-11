@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="./css/styles.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Películas</title>
+    </head>
+    <body>
+        <div id="main-container">
+            <h1>Registro de Películas</h1>
+            <form action="/new" method="POST">
+                <p>
+                    <label for="nombre">Nombre de la película: </label><br/>
+                    <input type="text" name="nombre" id="nombre">
+                </p>
+                <p>
+                    <label for="rating">Calificación: </label><br/>
+                    <input type="range" min="1" max="10" name="rating" id="rating">
+                </p>
+
+                <input type="button" value="Registrar nueva película" id="bSubmit">
+            </form>
+
+            <div id="peliculas-container">
+
+            </div>
+        </div>
+
+        <script>
+            const bSubmit = document.querySelector('#bSubmit');
+
+            loadPeliculas();
+
+            bSubmit.addEventListener('click', () =>{
+                // Validar campos.
+                const nombre = document.querySelector("#nombre").value;
+                const rating = document.querySelector("#rating").value;
+
+                if (nombre.trim() === '' || rating.trim() === '') return false;
+
+                // Mandar solicitud POST a /new.
+                fetch('/new', {
+                    method: 'POST', 
+                    headers: {'Content-type' : 'application/json'},
+                    body: JSON.stringify({nombre: nombre, rating: rating})
+                })
+                .then(res => res.text())
+                .then(data =>{
+                // Mostrar mensaje de error/éxito.
+                    alert(data);
+                    
+                // Actualizar lista de películas.
+                    loadPeliculas();
+                });
+            });
+
+            function loadPeliculas(){
+                fetch('/get-peliculas', {method: 'GET'})
+                .then(res => res.json())
+                .then(data =>{
+                    const peliculas = document.querySelector('#peliculas-container');
+                    let html = '';
+                    let i = 1;
+                    data.peliculas.forEach(pelicula =>{
+                        html += `<div>${i} - ${pelicula.nombre} <img src="img/star.png" width="16" />${pelicula.rating}</div>`
+                        i++;
+                    });
+                    peliculas.innerHTML = html;
+                });
+            }
+        </script>
+    </body>
+</html>
