@@ -1,0 +1,8 @@
+  <ng-container [ngSwitch]="inputJson.type">
+    <app-input-text *ngSwitchCase="'text'" [config]="inputJson"></app-input-text>
+    <app-input-number *ngSwitchCase="'number'" [config]="inputJson"></app-input-number>
+    <app-input-date *ngSwitchCase="'date'" [config]="inputJson"></app-input-date>
+    <app-input-select *ngSwitchCase="'select'" [config]="inputJson"></app-input-select>
+    <app-input-radio *ngSwitchCase="'radio'" [config]="inputJson"></app-input-radio>
+    <app-input-checkbox *ngSwitchCase="'checkbox'" [config]="inputJson"></app-input-checkbox>
+  </ng-container>

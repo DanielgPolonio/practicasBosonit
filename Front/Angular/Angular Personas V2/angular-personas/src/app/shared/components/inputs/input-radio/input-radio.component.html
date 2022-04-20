@@ -1,0 +1,10 @@
+<div class="form-label-group inputLine">
+  <label class="inputLine--label">{{this.config.props.label}}<span class="inputLine--required"
+      *ngIf="this.config.props.required">*</span></label>
+  <div *ngFor="let value of this.config.props.values">
+    <p-radioButton [value]="value" id="{{value}}" name="{{this.config.props.name}}" [(ngModel)]="model[property]"
+      class="inputLine--fieldBox">
+    </p-radioButton>
+    <label for="{{value}}">{{value}}</label>
+  </div>
+</div>

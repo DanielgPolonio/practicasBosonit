@@ -1,0 +1,296 @@
+body {
+  $fontFamily: 'Nunito', sans-serif !important;
+  color: rgb(59, 59, 59);
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  // height: 35px;
+  padding: 0px;
+  border-radius: 5px;
+  border: none;
+}
+
+button {
+  border-radius: 5px;
+  border: none;
+  background-color: #0f3b56;
+  color: white;
+  height: 40px;
+  transition: background-color 0.3s;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #0d3147;
+  }
+}
+
+.burger-button {
+  background: #FFFFFF;
+  display: flex;
+  margin-left: 5px;
+  margin-top: 15px;
+}
+
+//Scrollbar Styles
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: hsla(238, 55%, 56%, 0.644);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: hsla(238, 55%, 56%, 0.644);
+}
+
+.expandedVerticalMenu {
+  display: block;
+  max-height: calc(100vh - 2rem);
+  overflow-y: auto;
+}
+
+//End scrollbar styles
+
+//Vertical Menu styles:
+.expandedVerticalMenu {
+  .p-panelmenu .p-panelmenu-content {
+    background: #FBFAFF;
+    width: 305px;
+    border: none;
+  }
+}
+
+//Vertical Menu Container.
+.expandedVerticalMenu {
+  .p-panelmenu .p-panelmenu-header>a {
+    font-weight: bold;
+    padding-left: 25px;
+    background-color: #FBFAFF;
+    border-style: none;
+  }
+}
+
+//Selected main tab with hover
+.expandedVerticalMenu {
+  .p-panelmenu .p-panelmenu-header.p-highlight:not(.p-disabled)>a:hover {
+    border-color: #dee2e6;
+    background: #FBFAFF;
+    color: #5156CD;
+  }
+}
+
+//Main tab with hover
+.expandedVerticalMenu {
+  .p-panelmenu .p-panelmenu-header:not(.p-highlight):not(.p-disabled)>a:hover {
+    background: #FBFAFF;
+    border-color: #dee2e6;
+    color: #5156CD;
+  }
+}
+
+//Erase blue border
+.expandedVerticalMenu {
+  .p-panelmenu .p-panelmenu-header>a:focus {
+    outline: 0 none;
+    outline-offset: 0;
+    box-shadow: none;
+  }
+}
+
+.p-menubar{
+  background-color: #FFFFFF;
+}
+
+.expandedVerticalMenu {
+  .p-menubar .p-menubar-root-list>.p-menuitem>.p-menuitem-link:focus {
+    outline: 0 none;
+    outline-offset: 0;
+    box-shadow: none;
+    
+  }
+}
+
+//Child tab with hover
+.expandedVerticalMenu {
+  .p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-link:not(.p-disabled):hover {
+    background: #FBFAFF;
+  }
+}
+
+//Child tab
+.expandedVerticalMenu {
+  .p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-link:not(.p-disabled) {
+    box-shadow: none;
+    padding-left: 25px;
+    background: #FBFAFF;
+  }
+}
+
+//Child tab text
+.expandedVerticalMenu {
+  .p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-link:not(.p-disabled):hover .p-menuitem-text {
+    color: #5156CD;
+    font-weight: 500;
+  }
+}
+
+.expandedVerticalMenu {
+  .p-panelmenu-icon {
+    order: 1; // to be the first item on right side.
+  }
+}
+
+.expandedVerticalMenu {
+  .p-menuitem-text {
+    flex-grow: 1; // to fill the whole space and push the icon to the end
+  }
+}
+
+//Collapsed vertical menu styles
+
+//Main tab
+.collapsedVerticalMenu {
+  .p-tieredmenu .p-menuitem-link:not(.p-disabled):hover {
+    background: #FBFAFF;
+  }
+}
+
+//Tabs icon
+.collapsedVerticalMenu {
+
+  .p-tieredmenu .p-menuitem.p-menuitem-active>.p-menuitem-link .p-menuitem-icon,
+  .p-tieredmenu .p-menuitem.p-menuitem-active>.p-menuitem-link .p-submenu-icon {
+    color: #5156CD;
+  }
+}
+
+//Tabs text
+.collapsedVerticalMenu {
+  .p-tieredmenu .p-menuitem.p-menuitem-active>.p-menuitem-link .p-menuitem-text {
+    color: #5156CD;
+    font-weight: bold;
+  }
+}
+
+//Tabs background
+.collapsedVerticalMenu {
+  .p-tieredmenu .p-menuitem.p-menuitem-active>.p-menuitem-link {
+    background: #FBFAFF;
+  }
+}
+
+.menubarNavmenu--button--overlaypanel {
+  .p-overlaypanel .p-overlaypanel-content {
+    width: 450px;
+  }
+}
+
+.menubarNavmenu {
+
+  .p-menubar .p-menubar-custom,
+  .p-menubar .p-menubar-start {
+    margin-left: 15px;
+    background-color: #FFFFFF;
+  }
+}
+
+.p-tieredmenu {
+  width: fit-content;
+  padding: 0;
+  background: #FBFAFF;
+  color: #495057;
+  border: none;
+  border-radius: 0;
+  ul{
+      background: #FBFAFF;
+  }
+}
+
+//Breadcrumb
+
+//Breadcrumb - Separator
+.xng-breadcrumb-separator {
+  font-weight: bold;
+}
+
+//Breadcrumb - General
+.xng-breadcrumb-root {
+  font-weight: 500;
+}
+
+//Breadcrumb - Links
+.xng-breadcrumb-link {
+  color: black !important;
+}
+
+//Bell icon
+.p-overlay-badge {
+  font-size: 1.5rem;
+}
+
+.pi {
+  font-size: 1.5rem;
+}
+
+//Generic input styles
+.inputLine {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+
+  &--field {
+    width:100%;
+  }
+
+  &--label {
+    text-align: left;
+    font-weight: 700;
+    margin-bottom: 4px;
+
+  }
+
+  &--required {
+    font-weight: 700;
+    color: red;
+  }
+}
+
+.selectInput{
+  .p-dropdown{
+    width:100%;
+  }
+}
+
+.inputNumber{
+  .p-inputnumber{
+    width:100%;
+  }
+}
+
+//Calendar styles
+.p-datepicker .p-datepicker-header .p-datepicker-title .p-datepicker-year:enabled:hover,
+.p-datepicker .p-datepicker-header .p-datepicker-title .p-datepicker-month:enabled:hover {
+  background-color: white;
+}
+
+.p-card {
+  box-shadow: none;
+}
+
+.p-datatable table {
+  border-color: lightgrey;
+  border-style: solid;
+}

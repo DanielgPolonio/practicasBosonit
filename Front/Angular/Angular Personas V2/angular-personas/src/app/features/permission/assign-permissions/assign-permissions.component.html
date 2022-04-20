@@ -1,0 +1,7 @@
+<app-dropdowns-search [items]="users" filterByAndLabel="userName" placeholder="Selecciona un usuario"
+    (selection)="changeUserSelection($event)">
+</app-dropdowns-search>
+
+<app-checkbox-table title="Usuario a cambiar permisos" [fields]="permissionsGrouped" [checked]="userPermissionId"
+    (sendIdSelected)="savePermissions($event)">
+</app-checkbox-table>

@@ -1,55 +1,70 @@
+import { TokenInterceptor } from './core/interceptors/token.interceptor';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms'; 
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PersonasComponent } from './components/personas/personas.component';
-import { PersonDetailComponent } from './components/person-detail/person-detail.component';
-import { HttpClientModule } from '@angular/common/http';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './in-memory-data.service';
-import { MessagesComponent } from './components/messages/messages.component';
-import { CrearPersonaComponent } from './components/crear-persona/crear-persona.component';
-import { PersonSearchComponent } from './components/person-search/person-search.component';
-import { PersonModalComponent } from './components/person-modal/person-modal.component';
-import {MatDialogModule} from '@angular/material/dialog';
-import {MatInputModule} from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button';
-import {MatCardModule} from '@angular/material/card';
-import { MatMenuModule} from '@angular/material/menu';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatNativeDateModule} from '@angular/material/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { PersonDeleteComponent } from './components/person-delete/person-delete.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { MatIconModule } from '@angular/material/icon';
-import { PersonVistaCardComponent } from './components/person-vista-card/person-vista-card.component'
+import { AuthInterceptor } from './core/interceptors/auth.interceptor';
+import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
+import { GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from 'angularx-social-login';
+import { environment } from 'src/environments/environment';
+import { DatePipe } from '@angular/common';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    PersonasComponent,
-    PersonDetailComponent,
-    MessagesComponent,
-    CrearPersonaComponent,
-    PersonSearchComponent,
-    PersonModalComponent,
-    PersonDeleteComponent,
-    DashboardComponent,
-    PersonVistaCardComponent
-  ],
+  declarations: [AppComponent, ],
   imports: [
-    HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(
-    InMemoryDataService, { dataEncapsulation: false }),
-    BrowserModule,
     BrowserAnimationsModule,
+    BrowserModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
     AppRoutingModule,
-    FormsModule,
-    MatDialogModule, MatInputModule, MatButtonModule, MatCardModule, MatFormFieldModule, MatNativeDateModule, MatMenuModule, MatIconModule
+    HttpClientModule,
+    ToastModule,
+    SocialLoginModule,
+
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    DatePipe,
+    MessageService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              environment.CLIENT_ID_GOOGLE
+            )
+          }
+        ]
+      } as SocialAuthServiceConfig,
+    }
+  ],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
+
+// required for AOT compilation
+export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
+  return new TranslateHttpLoader(http);
+}

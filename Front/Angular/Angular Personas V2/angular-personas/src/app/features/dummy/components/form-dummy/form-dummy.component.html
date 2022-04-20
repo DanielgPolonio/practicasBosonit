@@ -1,0 +1,10 @@
+<form [formGroup]="dummyForm" (ngSubmit)="onSubmit()">
+    <input placeholder="Nombre" formControlName="firstName" />
+    <input placeholder="Apellidos" formControlName="lastName" />
+    <label for="active">
+        Activo
+        <input id="active" type="checkbox" formControlName="active" />
+    </label>
+    <button type="submit">{{okButton}}</button>
+    <button type="button">{{cancelButton}}</button>
+</form>
