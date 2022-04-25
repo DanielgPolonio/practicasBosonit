@@ -1,8 +1,0 @@
-<div class="inputLine">
-  <label class="inputLine--label">{{this.config.props.label}}
-    <span class="inputLine--required" *ngIf="this.config.props.required">*</span>
-    </label>
-    <p-calendar [(ngModel)]="model[property]" class="inputLine--field" [showIcon]="true" [readonlyInput]="true"
-    name="{{this.config.props.name}}" dateFormat="dd/mm/yy" appendTo="body" [firstDayOfWeek]=1></p-calendar>
-  </div>
-
