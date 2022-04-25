@@ -1,0 +1,7 @@
+<div class="inputLine">
+  <label class="mr-auto inputLine--label">{{this.config.props.label}}</label>
+  <span class="required inputLine--required" *ngIf="this.config.props.required">*</span>
+  <p-inputNumber name="{{this.config.props.name}}" [(ngModel)]="model[property]"
+  class="inputNumber" [useGrouping]="false" [min]="this.config.props.min" [max]="this.config.props.max">
+  </p-inputNumber>
+</div>

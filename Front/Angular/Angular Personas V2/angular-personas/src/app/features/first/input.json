@@ -1,0 +1,47 @@
+[{
+    "type": "text",
+    "modelProperty": {},
+    "props": {
+      "label": "Nombre: ",
+      "name": "name",
+      "required": true,
+      "disabled": false,
+      "placeholder": "Nombre...",
+      "maxlength": 250
+    }
+  },
+  {
+    "type": "text",
+    "modelProperty": {},
+    "props": {
+      "label": "Apellido: ",
+      "name": "lastName",
+      "required": false,
+      "disabled": false,
+      "placeholder": "Apellido...",
+      "maxlength": 250
+    }
+  },
+  {
+    "type": "number",
+    "modelProperty": {},
+    "props": {
+      "label": "Edad: ",
+      "name": "age",
+      "required": false,
+      "disabled": false,
+      "max": 99,
+      "min": 1
+    }
+  },
+  {
+    "type": "date",
+    "modelProperty": {},
+    "props": {
+      "label": "Fecha de nacimiento: ",
+      "name": "birthDate",
+      "required": false,
+      "disabled": false
+    }
+  }
+]
