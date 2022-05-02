@@ -1,7 +1,0 @@
-{
-  "label": "Crear empleado",
-  "name": "crearEmpleado",
-  "disabled": false,
-  "class": "createEmployeeButton",
-  "icon": "pi pi-check"
-}

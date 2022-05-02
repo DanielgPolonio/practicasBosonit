@@ -1,7 +1,0 @@
-<div class="inputLine">
-  <label class="inputLine--label">{{this.config.props.label}}
-    <span class="inputLine--required" *ngIf="this.config.props.required">*</span>
-  </label>
-  <input type="text" name="{{this.config.props.name}}" (keypress)="onlyLetters($event)"
-    [(ngModel)]="model[property]" class="inputLine--field" [placeholder]="this.config.props.placeholder" pInputText>
-</div>
