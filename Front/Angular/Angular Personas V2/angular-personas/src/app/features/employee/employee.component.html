@@ -1,0 +1,23 @@
+<h2>Empleados</h2>
+<div class="employeeTable">
+  <div class="employeeTable--header">
+    <h3 class="employeeTable--header--title">Lista de empleados ({{tableJson.length}})</h3>
+    <app-button [buttonJson]="buttonJson" (isClickedButton)="newEmployee()"></app-button>
+  </div>
+  <app-table [columns]="columns" [data]="tableJson" (onClickButtonAction)="handleActionEmployee($event)"></app-table>
+  <p-dialog [(visible)]="newEmployeeDialog" class="newEmployeeDialog" header="{{headerEmployee}}" [modal]="true"
+    styleClass="p-fluid">
+    <ng-template pTemplate="content">
+      <ng-container *ngFor="let input of inputJson">
+        <app-input-parent [inputs]="input"></app-input-parent>
+      </ng-container>
+      <ng-container *ngIf="editEmployee else editEmp">
+        <app-button [buttonJson]="editButtonJson" (click)="newEmployeeDialog=false"></app-button>
+      </ng-container>
+      <ng-template #editEmp>
+        <app-button [buttonJson]="createButtonJson" (isClickedButton)="createEmployee()"></app-button>
+      </ng-template>
+    </ng-template>
+  </p-dialog>
+  <p-confirmDialog></p-confirmDialog>
+</div>

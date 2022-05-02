@@ -6,6 +6,7 @@ export interface InputConfig {
     | "radio"
     | "select"
     | "text"
+    | "datetime"
   ,
   modelProperty: {
     property: any,

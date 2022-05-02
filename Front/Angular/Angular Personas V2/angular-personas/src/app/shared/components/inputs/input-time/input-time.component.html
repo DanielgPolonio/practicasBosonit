@@ -1,0 +1,10 @@
+<div class="inputLine">
+    <label class="inputLine--label">{{this.config.props.label}}
+      <span class="inputLine--required" *ngIf="this.config.props.required">
+        *
+      </span>
+    </label>
+    <p-calendar [(ngModel)]="model[property]" class="inputLine--field" [readonlyInput]="true"
+      name="{{this.config.props.name}}" [timeOnly]="true" appendTo="body" placeholder="hh:mm">
+    </p-calendar>
+  </div>

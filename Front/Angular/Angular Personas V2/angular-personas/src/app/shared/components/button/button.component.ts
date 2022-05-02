@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ButtonConfig } from './button.config';
 
 @Component({
   selector: 'app-button',
@@ -7,14 +8,14 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class ButtonComponent implements OnInit {
 
-  @Input() buttonJson:any;
-  @Output() isClickedButton:EventEmitter<any> = new EventEmitter<any>();
+  @Input() buttonJson:ButtonConfig;
+  @Output() isClickedButton:EventEmitter<MouseEvent> = new EventEmitter<MouseEvent>();
 
   constructor() { }
 
   ngOnInit(): void {    
   }
-  onClick(event : Event){
+  onClick(event : MouseEvent){
    this.isClickedButton.emit(event);
   }
 }

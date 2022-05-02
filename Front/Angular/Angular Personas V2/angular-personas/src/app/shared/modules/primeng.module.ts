@@ -24,19 +24,17 @@ import { DialogModule } from 'primeng/dialog';
 import {TieredMenuModule} from 'primeng/tieredmenu';
 import { NgModule } from '@angular/core';
 import {PanelMenuModule} from 'primeng/panelmenu';
-
-
-
+import {ConfirmDialogModule} from 'primeng/confirmdialog';
 
 @NgModule({
     imports: [BreadcrumbModule, DialogModule, ButtonModule, TabViewModule, ChipModule, CardModule, DividerModule, OverlayPanelModule, SidebarModule, BadgeModule,
         SplitButtonModule, AvatarModule, AvatarGroupModule,
         TableModule, MenubarModule, MenuModule, ToggleButtonModule,
-        CheckboxModule, DropdownModule, TieredMenuModule, PanelMenuModule,InputTextModule,InputNumberModule,CalendarModule,RadioButtonModule
+        CheckboxModule, DropdownModule, TieredMenuModule, PanelMenuModule,InputTextModule,InputNumberModule,CalendarModule,RadioButtonModule, ConfirmDialogModule,
     ],
     exports: [BreadcrumbModule, DialogModule, ButtonModule, TabViewModule, ChipModule, CardModule, DividerModule, OverlayPanelModule, SidebarModule, BadgeModule,
         SplitButtonModule, AvatarModule, AvatarGroupModule,
         TableModule, MenubarModule, MenuModule, ToggleButtonModule,
-        CheckboxModule, DropdownModule, TieredMenuModule, PanelMenuModule,InputTextModule,InputNumberModule,CalendarModule,RadioButtonModule]
+        CheckboxModule, DropdownModule, TieredMenuModule, PanelMenuModule,InputTextModule,InputNumberModule,CalendarModule,RadioButtonModule, ConfirmDialogModule]
 })
 export class PrimeNgModule { }

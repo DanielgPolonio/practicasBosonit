@@ -1,0 +1,155 @@
+[{
+    "type": "text",
+    "modelProperty": {},
+    "props": {
+      "label": "Nombre",
+      "name": "name",
+      "required": true,
+      "disabled": false,
+      "placeholder": "Nombre...",
+      "maxlength": 250
+    }
+  },
+  {
+    "type": "text",
+    "modelProperty": {},
+    "props": {
+      "label": "Apellidos",
+      "name": "surname",
+      "required": true,
+      "disabled": false,
+      "placeholder": "Apellidos...",
+      "maxlength": 250
+    }
+  },
+  {
+    "type": "email",
+    "modelProperty": {},
+    "props": {
+      "label": "Email",
+      "name": "email",
+      "required": false,
+      "disabled": false,
+      "placeholder": "Email...",
+      "maxlength": 250
+    }
+  },
+  {
+    "type": "select",
+    "modelProperty": {},
+    "props": {
+      "label": "Comunidad Autónoma",
+      "name": "ac",
+      "required": false,
+      "options":["test"],
+      "placeholder": "Seleccione una CCAA"
+    }
+  },
+  {
+    "type": "select",
+    "modelProperty": {},
+    "props": {
+      "label": "Provincia",
+      "name": "province",
+      "required": false,
+      "options":[],
+      "placeholder": "Seleccione una provincia"
+    }
+  },
+  {
+    "type": "select",
+    "modelProperty": {},
+    "props": {
+      "label": "Localidad",
+      "name": "city",
+      "required": false,
+      "options":["Sí", "No"]
+
+    }
+  },
+  {
+    "type": "select",
+    "modelProperty": {},
+    "props": {
+      "label": "Tecnologías",
+      "name": "tech",
+      "required": false,
+      "options":["Sí", "No"]
+    }
+  },
+  {
+    "type": "date",
+    "modelProperty": {},
+    "props": {
+      "label": "Fecha fin de prácticas",
+      "name": "internshipEndDate",
+      "required": false,
+      "disabled": false
+    }
+  },
+  {
+    "type": "datetime",
+    "modelProperty": {},
+    "props": {
+      "label": "Preferencia de entrada",
+      "name": "checkinTimePreference",
+      "required": false,
+      "disabled": false
+    }
+  },
+  {
+    "type": "datetime",
+    "modelProperty": {},
+    "props": {
+      "label": "Preferencia de salida",
+      "name": "checkoutTimePreference",
+      "required": false,
+      "disabled": false
+    }
+  },
+  {
+    "type": "text",
+    "modelProperty": {},
+    "props": {
+      "label": "Formación",
+      "name": "formation",
+      "required": false,
+      "disabled": false,
+      "placeholder": "Formación...",
+      "maxlength": 250
+    }
+  },
+  {
+    "type": "select",
+    "modelProperty": {},
+    "props": {
+      "label": "CAR",
+      "name": "car",
+      "required": false,
+      "options":["Sí", "No"]
+    }
+  },
+  {
+    "type": "text",
+    "modelProperty": {},
+    "props": {
+      "label": "Posición",
+      "name": "position",
+      "required": false,
+      "disabled": false,
+      "placeholder": "Posición...",
+      "maxlength": 250
+    }
+  },
+  {
+    "type": "radio",
+    "modelProperty": {},
+    "props": {
+      "label": "Remoto",
+      "name": "remote",
+      "required": false,
+      "options": [true, false],
+      "values": ["Sí", "No"]
+    }
+  }
+]

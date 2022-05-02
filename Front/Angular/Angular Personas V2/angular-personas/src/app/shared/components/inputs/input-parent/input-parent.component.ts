@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { InputConfig } from './input.config';
 @Component({
   selector: 'app-input-parent',
   templateUrl: './input-parent.component.html',
@@ -6,12 +7,9 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class InputParentComponent implements OnInit {
 
-  @Input() inputs:object;
-
-  inputJson:any;
+  @Input() inputs: any;
   constructor() { }
 
   ngOnInit(): void {
-    this.inputJson=this.inputs;
 }
 }

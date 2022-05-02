@@ -1,0 +1,22 @@
+.employeeTable {
+  border: 1px;
+  margin-top: -12px;
+  border-color: #c0cbcb52;
+  border-style: groove;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 5px;
+  padding-top: 5px;
+
+  &--header {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    margin-right:1%;
+    &--title {
+      margin-left: 10px;
+    }
+  }
+}

@@ -4,17 +4,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { MainComponent } from './main.component';
 import { PageHomeComponent } from '../home/components/page-home/page-home.component';
 import { PermissionModule } from '../permission/permission.module';
-import { FirstComponent } from '../first/first.component';
-import { UserModule } from '../user/user.module';
-
+import { EmployeeComponent } from '../employee/employee.component';
 const routes: Routes = [
   {
     path: '',
     component: MainComponent,
     children: [
       {
-        path: '',
-        component: PageHomeComponent,
+        path: 'empleados',
+        component: EmployeeComponent,
       },
       {
         path: 'dummy',
@@ -24,14 +22,6 @@ const routes: Routes = [
         path: 'permission',
         loadChildren: () => PermissionModule,
       },
-      {
-        path: 'test',
-        component:  FirstComponent
-      },
-      {
-        path: 'users',
-        loadChildren: () => UserModule,
-      }
     ],
   },
 ];

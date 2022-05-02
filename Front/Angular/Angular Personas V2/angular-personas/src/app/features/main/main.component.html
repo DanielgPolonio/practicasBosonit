@@ -1,9 +1,9 @@
 <div class="container">
   <div class="container--verticalMenu">
-      <app-nav-side-menu [showMenu]="sendMenu"></app-nav-side-menu>
+      <app-nav-side-menu [showMenu]="sendMenu" (showMenuEmitter)="showMenuHandler($event)"></app-nav-side-menu>
   </div>
   <div class="container--horizontal">
-    <app-menubar (showMenuEmitter)="showMenuHandler($event)"></app-menubar>
+    <app-menubar [showMenu]="sendMenu" (showMenuEmitter)="showMenuHandler($event)"></app-menubar>
     <div class="container--horizontal--breadcrumb">
       <xng-breadcrumb separator=">"></xng-breadcrumb>
     </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 import { EventEmitter } from '@angular/core';
@@ -16,8 +16,8 @@ interface City {
 })
 export class MenubarComponent implements OnInit {
 
+  @Input() showMenu: boolean = true;
   @Output() showMenuEmitter: EventEmitter<boolean> = new EventEmitter<boolean>();
-  showMenu: boolean = true;
   notifications: number = 2;
   display: boolean;
   items: MenuItem[];
@@ -28,6 +28,7 @@ export class MenubarComponent implements OnInit {
 
   ngOnInit() {
     this.items = menubar;
+  
   }
   logOut(): void {
     localStorage.removeItem('roles');
@@ -36,7 +37,7 @@ export class MenubarComponent implements OnInit {
   }
 
   changeMenuOnClick() {
-    this.showMenuEmitter.emit(this.showMenu);
     this.showMenu = !this.showMenu;
+    this.showMenuEmitter.emit(this.showMenu);
   }
 }

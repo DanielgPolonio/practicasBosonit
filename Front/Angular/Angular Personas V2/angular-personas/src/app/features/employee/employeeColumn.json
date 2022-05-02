@@ -1,0 +1,61 @@
+[{
+    "name": "Nombre",
+    "id": "name",
+    "dataType": "string"
+  },
+  {
+    "name": "Apellidos",
+    "id": "surname",
+    "dataType": "string"
+  },
+  {
+    "name": "Email",
+    "id": "email",
+    "dataType": "string"
+  },
+  {
+    "name": "C. Autónoma",
+    "id": "ac",
+    "dataType": "string"
+  },
+  {
+    "name": "Provincia",
+    "id": "province",
+    "dataType": "string"
+  },
+  {
+    "name": "Ciudad",
+    "id": "city",
+    "dataType": "string"
+  },
+  {
+    "name": "Tecnologías",
+    "id": "tech",
+    "dataType": "string"
+  },
+  {
+    "name": "Formación",
+    "id": "formation",
+    "dataType": "string"
+  },
+  {
+    "name": "Car",
+    "id": "car",
+    "dataType": "string"
+  },
+  {
+    "name": "Posición",
+    "id": "position",
+    "dataType": "string"
+  },
+  {
+    "name": "Remoto",
+    "id": "remote",
+    "dataType": "boolean"
+  },
+  {
+    "name": "Acciones",
+    "id": "actions",
+    "dataType": "string"
+  }
+]

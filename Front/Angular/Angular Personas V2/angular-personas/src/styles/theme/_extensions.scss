@@ -1,6 +1,7 @@
 body {
   $fontFamily: 'Nunito', sans-serif !important;
   color: rgb(59, 59, 59);
+  overflow-x: hidden;
 }
 
 a {
@@ -8,7 +9,6 @@ a {
 }
 
 input {
-  // height: 35px;
   padding: 0px;
   border-radius: 5px;
   border: none;
@@ -26,13 +26,6 @@ button {
     cursor: pointer;
     background-color: #0d3147;
   }
-}
-
-.burger-button {
-  background: #FFFFFF;
-  display: flex;
-  margin-left: 5px;
-  margin-top: 15px;
 }
 
 //Scrollbar Styles
@@ -64,6 +57,13 @@ button {
 
 //End scrollbar styles
 
+//dialog styles:
+.newEmployeeDialog {
+  .p-dialog {
+    width: 60%;
+  }
+}
+
 //Vertical Menu styles:
 .expandedVerticalMenu {
   .p-panelmenu .p-panelmenu-content {
@@ -76,6 +76,7 @@ button {
 //Vertical Menu Container.
 .expandedVerticalMenu {
   .p-panelmenu .p-panelmenu-header>a {
+    font-family: $fontFamily;
     font-weight: bold;
     padding-left: 25px;
     background-color: #FBFAFF;
@@ -110,7 +111,7 @@ button {
   }
 }
 
-.p-menubar{
+.p-menubar {
   background-color: #FFFFFF;
 }
 
@@ -119,7 +120,7 @@ button {
     outline: 0 none;
     outline-offset: 0;
     box-shadow: none;
-    
+
   }
 }
 
@@ -214,8 +215,9 @@ button {
   color: #495057;
   border: none;
   border-radius: 0;
-  ul{
-      background: #FBFAFF;
+
+  ul {
+    background: #FBFAFF;
   }
 }
 
@@ -247,12 +249,17 @@ button {
 
 //Generic input styles
 .inputLine {
-  display: flex;
-  flex-direction: column;
+  display: inline-block;
   margin-bottom: 10px;
+  margin-left: 5%;
+  width: 40%;
 
   &--field {
-    width:100%;
+    width: 100%;
+  }
+
+  &--fieldBox {
+    margin-top:6px;
   }
 
   &--label {
@@ -268,15 +275,15 @@ button {
   }
 }
 
-.selectInput{
-  .p-dropdown{
-    width:100%;
+.selectInput {
+  .p-dropdown {
+    width: 100%;
   }
 }
 
-.inputNumber{
-  .p-inputnumber{
-    width:100%;
+.inputNumber {
+  .p-inputnumber {
+    width: 100%;
   }
 }
 
@@ -290,7 +297,41 @@ button {
   box-shadow: none;
 }
 
-.p-datatable table {
-  border-color: lightgrey;
-  border-style: solid;
+.p-datatable .p-datatable-thead>tr>th {
+  background: #FFFFFF;
+}
+
+.createEmployeeButton, .createEmployeeButton:hover, .createEmployeeButton:enabled, .createEmployeeButton:disabled, .createEmployeeButton:enabled:hover  {
+  width: 20%;
+  margin-left: 38%;
+  margin-top:2%;
+  color: #ffffff;
+  display: block;
+  background-color: #5156CD;
+  border-radius: 20px;
+  border: none;
+
+  .pi {
+    font-size: 1rem;
+  }
+}
+
+.p-dialog .p-dialog-content {
+  padding: 0 0rem 2rem 1.5rem;
+}
+
+.p-dialog-header-close-icon {
+  font-size: 1rem;
+}
+
+.p-radiobutton {
+  margin-left:5px;
+}
+
+.p-button.p-button-success{
+      border-radius: 20px;
+}
+
+.p-dialog{
+  width: 30%;
 }

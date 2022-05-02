@@ -1,0 +1,7 @@
+{
+    "label": "Editar empleado",
+    "name": "editarEmpleado",
+    "disabled": false,
+    "class": "createEmployeeButton",
+    "icon": "pi pi-check"
+  }

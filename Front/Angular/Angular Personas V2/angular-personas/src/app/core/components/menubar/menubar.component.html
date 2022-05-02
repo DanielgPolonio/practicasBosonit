@@ -1,7 +1,7 @@
 <p-menubar class="menubarNavmenu">
   <ng-template pTemplate="start">
-    <div class="menubarNavmenu--button">
-      <a (click)="changeMenuOnClick()"><i class="pi pi-bars burger-button"></i></a>
+    <div *ngIf="showMenu" class="menubarNavmenu--button">
+      <a (click)="changeMenuOnClick()"><i class="pi pi-bars"></i></a>
     </div>
   </ng-template>
   <ng-template pTemplate="end">

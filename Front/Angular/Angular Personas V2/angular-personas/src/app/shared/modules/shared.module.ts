@@ -8,7 +8,6 @@ import { MenubarComponent } from '../../core/components/menubar/menubar.componen
 import { PrimeNgModule } from './primeng.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { InputParentComponent } from '../components/inputs/input-parent/input-parent.component';
-import { FirstComponent } from '../../features/first/first.component';
 import { InputTextComponent } from '../components/inputs/input-text/input-text.component';
 import { InputNumberComponent } from '../components/inputs/input-number/input-number.component';
 import { InputSelectComponent } from '../components/inputs/input-select/input-select.component';
@@ -17,14 +16,19 @@ import { InputRadioComponent } from '../components/inputs/input-radio/input-radi
 import { InputCheckboxComponent } from '../components/inputs/input-checkbox/input-checkbox.component';
 import { ButtonComponent } from '../components/button/button.component';
 import { TableComponent } from '../components/table/table.component';
+import { NavSideMenuComponent } from 'src/app/core/components/nav-side-menu/nav-side-menu.component';
+import { BreadcrumbModule } from 'xng-breadcrumb';
+import { InputTimeComponent } from '../components/inputs/input-time/input-time.component';
+import { InputEmailComponent } from '../components/inputs/input-email/input-email.component';
+
 
 
 
 @NgModule({
-    imports: [CommonModule, FormsModule, ReactiveFormsModule, PrimeNgModule, TranslateModule],
-    declarations: [CheckboxTableComponent, DropdownsSearchComponent, MenubarComponent, InputParentComponent, FirstComponent, InputTextComponent, InputNumberComponent, InputSelectComponent, InputDateComponent, InputRadioComponent, InputCheckboxComponent, ButtonComponent, TableComponent
+    imports: [CommonModule, FormsModule, ReactiveFormsModule, PrimeNgModule, TranslateModule, BreadcrumbModule],
+    declarations: [CheckboxTableComponent, DropdownsSearchComponent, MenubarComponent, NavSideMenuComponent, InputParentComponent, InputTextComponent, InputNumberComponent, InputSelectComponent, InputDateComponent, InputRadioComponent, InputCheckboxComponent, ButtonComponent, TableComponent, InputTimeComponent, InputEmailComponent
         ],
-    exports: [CheckboxTableComponent, DropdownsSearchComponent, MenubarComponent, PrimeNgModule, TranslateModule,InputParentComponent, FirstComponent,  InputTextComponent, InputNumberComponent, InputSelectComponent, InputDateComponent, InputRadioComponent, InputCheckboxComponent, ButtonComponent, TableComponent]
+    exports: [BreadcrumbModule, CheckboxTableComponent, DropdownsSearchComponent, NavSideMenuComponent, MenubarComponent, PrimeNgModule, TranslateModule,InputParentComponent, InputTextComponent, InputNumberComponent, InputSelectComponent, InputDateComponent, InputRadioComponent, InputCheckboxComponent, ButtonComponent, TableComponent, InputTimeComponent, InputEmailComponent]
 
 })
 export class SharedModule { }

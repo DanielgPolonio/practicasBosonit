@@ -14,22 +14,16 @@ export const menubar = [
             {
                 label: 'Contraseña',
                 icon: 'pi pi-key',
-
             },
             {
                 label: 'Verificacion 2 pasos',
                 icon: 'pi pi-check',
-
             },
-
+            {
+                label: 'Log out',
+                icon: 'pi pi-user-minus',
+                routerLink: ['/auth/login']
+            }
         ]
-    },
-
-    {
-        separator: true
-    },
-    {
-        label: 'Log out',
-        routerLink: ['/logout']
-    },
+    }
 ]

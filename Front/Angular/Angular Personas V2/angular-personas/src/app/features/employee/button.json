@@ -1,0 +1,7 @@
+{
+  "label": "Nuevo",
+  "name": "nuevoEmpleado",
+  "disabled": false,
+  "class": "p-button-success",
+  "icon": "pi pi-plus"
+}
